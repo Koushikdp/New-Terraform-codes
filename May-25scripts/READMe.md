@@ -56,3 +56,9 @@ Error occurred due to cache stored in statefile or init(not sure) the secret is 
 ![image](https://github.com/Koushikdp/New-Terraform-codes/assets/86507986/dbadd5cc-e109-4922-a691-f13c1a05a638)
 
 Error occurrred while detroying all resources keyvalut tries to purge the secret when it is still in deleted state and currently being deleted. post deletion only we have to do that operations.
+
+**Error 8**
+
+![image](https://github.com/Koushikdp/New-Terraform-codes/assets/86507986/4afe3612-596c-439e-ace9-f91e49c75d30)
+
+Error occureed after destroying manually from azure again deploying the resources in terraform but due to cache random password is not generated and key vault is unable to recover the deleted secret value as it does not have Recover permission. we can give Recover permission to get the deleted key or remove the cache memory or change the name and deploy the infra again.
