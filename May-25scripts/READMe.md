@@ -69,3 +69,9 @@ Error occureed after destroying manually from azure again deploying the resource
 ![image](https://github.com/Koushikdp/New-Terraform-codes/assets/86507986/5956e577-d3e7-4f84-bbcf-51b2bbf4083d)
 
 When you change any verison of terraform make sure to upgrade it using terraform init -upgrade to upgrade to new version and cache will also getremoved.
+
+**Error 10**
+
+![image](https://github.com/Koushikdp/New-Terraform-codes/assets/86507986/ebb94c47-a643-470e-bb2e-ecea39f5d0f0)
+
+Error occurred due to case sensitive value provided for private ip allocation. few versions have values as case sensitive so it shuld be Static not static.
