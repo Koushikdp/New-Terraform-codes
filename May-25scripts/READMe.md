@@ -8,6 +8,10 @@ Today task may25
 6. Deleting the state file and importing the resources into statefile and destroy resources.
 7. Errors.
 
+**Imp**
+
+terraform import azurerm_virtual_machine.example /subscriptions/{subscription_id}/resourceGroups/{resource_group_name}/providers/Microsoft.Compute/virtualMachines/virtual_machine_name
+
 
 Errors:
 
