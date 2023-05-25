@@ -18,7 +18,7 @@
 * IAC helps in disaster recovery. 
 * IAC helps in deploying resources through automation with less human errors. 
 
-**Terraform ** : It is a tool for building and changing and versioning infrastructure. It is more secure and can manage high- and low-level components. 
+**Terraform** : It is a tool for building and changing and versioning infrastructure. It is more secure and can manage high- and low-level components. 
 * Third party application developed by hashi corp 
 * Uses hashi corp language 
 
