@@ -62,3 +62,10 @@ Error occurrred while detroying all resources keyvalut tries to purge the secret
 ![image](https://github.com/Koushikdp/New-Terraform-codes/assets/86507986/4afe3612-596c-439e-ace9-f91e49c75d30)
 
 Error occureed after destroying manually from azure again deploying the resources in terraform but due to cache random password is not generated and key vault is unable to recover the deleted secret value as it does not have Recover permission. we can give Recover permission to get the deleted key or remove the cache memory or change the name and deploy the infra again.
+
+
+**Error 9**
+
+![image](https://github.com/Koushikdp/New-Terraform-codes/assets/86507986/5956e577-d3e7-4f84-bbcf-51b2bbf4083d)
+
+When you change any verison of terraform make sure to upgrade it using terraform init -upgrade to upgrade to new version and cache will also getremoved.
