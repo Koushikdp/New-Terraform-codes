@@ -277,3 +277,72 @@ Terraform plan -out main.tfplan  -> used to create an execution plan for Terrafo
 Terraform fmt -> used to automatically format your Terraform configuration files.
 
 Terraform apply main.tfplan -> used to apply the changes defined in your Terraform configuration and create or modify the resources accordingly
+
+
+**Creating a variable file for the above and accessing in main file**
+
+image.png
+
+main.tf
+
+terraform {
+
+required_providers {
+
+azurerm = {
+
+source  = "hashicorp/azurerm" 
+
+version = "3.50.0" 
+
+} 
+
+} 
+
+} 
+
+provider "azurerm" {
+
+features {}
+
+client_id       = "" 
+
+tenant_id       = "" 
+
+subscription_id = "" 
+
+client_secret   = "" 
+
+} 
+
+resource "azurerm_resource_group" "myrg" {
+
+  name     = var.RgName 
+
+  location = var.RGlocation 
+
+} 
+
+**Variable.tf**
+
+variable "RgName" { 
+
+type        = string 
+
+description = "name of the resource " 
+
+default = "koushik-Rg"
+
+} 
+
+variable "RGlocation" { 
+
+type        = string 
+
+description = "name of the resource " 
+
+default= "eastus"
+
+} 
+
+Now we can follow the same process of creating infra. Terraform will check the resources in main.tf  check for the variable files in that folder once found the variables file it will combine variables value to resources file.
