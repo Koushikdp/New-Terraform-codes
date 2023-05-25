@@ -281,7 +281,8 @@ Terraform apply main.tfplan -> used to apply the changes defined in your Terrafo
 
 **Creating a variable file for the above and accessing in main file**
 
-image.png
+![image](https://github.com/Koushikdp/New-Terraform-codes/assets/86507986/aa143726-f548-4585-a677-01cd9f72ac8a)
+
 
 main.tf
 
