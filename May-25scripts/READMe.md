@@ -1,4 +1,6 @@
-Today task may25
+May25
+
+Completed tasks for today:
 
 1. Deploying infra with out client and subscription id's.
 2. Vm Password should be in encrypted mode
