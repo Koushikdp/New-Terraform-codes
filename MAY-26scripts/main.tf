@@ -1,3 +1,5 @@
+
+
 terraform {
   required_providers {
     azurerm = {
@@ -10,16 +12,16 @@ terraform {
 terraform { 
 
   backend "azurerm" { 
-    resource_group_name  = "NetworkWatcherRG"
-    storage_account_name = "kstg123"
-    container_name       = "koushik"
-    key                  = "terraform.tfstate" 
+
   } 
 } 
 
 
+
 provider "azurerm" {
-  features {}
+  features {
+
+  }
 }
 
 resource "azurerm_resource_group" "RG1" {
@@ -175,17 +177,29 @@ resource "azurerm_key_vault" "myvault" {
   enabled_for_disk_encryption = true
 
   purge_protection_enabled = false
-  
-  access_policy {
-    tenant_id = data.azurerm_client_config.current.tenant_id
-    object_id ="439b602a-a78d-47b5-93d2-adc7c0b96814"
-    secret_permissions = ["Get", "List", "Set","Delete","Purge"]
-    
-  }
+ 
 tags = {
  project ="learning"
  env = "dev"
 }
+
+}
+
+locals {
+objectIds = {
+currentid = data.azurerm_client_config.current.object_id
+myid= var.myObjectId
+adoid= var.ADO_Service_Account_ObjectId
+}
+}
+
+resource "azurerm_key_vault_access_policy" "koushikPolicy" {
+for_each= local.objectIds
+key_vault_id= azurerm_key_vault.myvault.id
+tenant_id= data.azurerm_client_config.current.tenant_id
+object_id= each.value
+secret_permissions = ["Get", "Set", "List", "Delete", "Recover", "Restore", "Set", "Purge"]
+depends_on=[azurerm_key_vault.myvault]
 
 }
 
@@ -195,13 +209,5 @@ resource "azurerm_key_vault_secret" "passwordsecret" {
   name         = var.secretkeys
   value        = random_password.password.result 
   key_vault_id = azurerm_key_vault.myvault.id
+depends_on=[azurerm_key_vault_access_policy.koushikPolicy]
 }
-
-
-
-
-
-
-
-
-

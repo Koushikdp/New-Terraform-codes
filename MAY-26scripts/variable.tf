@@ -137,4 +137,15 @@ default="koushik-secretvalues"
 }
 
 
+variable "myObjectId" {
+type=string
+default="439b602a-a78d-47b5-93d2-adc7c0b96814"
+
+}
+
+variable "ADO_Service_Account_ObjectId"{
+type=string
+default= "7991a281-33bb-455a-9eb8-fe8ece4f0857"
+
+}
 
