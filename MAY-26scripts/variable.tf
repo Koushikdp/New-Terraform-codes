@@ -127,13 +127,13 @@ default="koushik-container"
 
 variable "keyvaults"{
 type= string
-default="koushik-vaultfiles"
+default="koushik-vaultf"
 
 }
 
 variable "secretkeys" {
 type=string
-default="koushik-secretvalues"
+default="koushik-secret"
 }
 
 
