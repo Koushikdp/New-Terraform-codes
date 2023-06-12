@@ -15,10 +15,10 @@ provider "azurerm" {
   # Configuration options for Azure 
 
   features {} 
-  client_id       = "a6c6163b-607b-467d-9c3e-09dd4da70294" 
-  tenant_id       = "0c45565b-c823-4469-9b6b-30989afb7a2e" 
-  subscription_id = "738dfdc6-f0bd-407d-b899-c56640f7ce02" 
-  client_secret   = "twx8Q~l4fmCpow4nX8GmhW4rHvL9Lm5MxG5Nvcl6" 
+  client_id       = "" 
+  tenant_id       = "" 
+  subscription_id = "" 
+  client_secret   = "" 
 } 
 
   
