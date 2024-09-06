@@ -1,17 +1,17 @@
-name: Greetings
+name: Hello World Workflow
 
 on:
-  workflow_dispatch:  
+  workflow_dispatch: # Allows manual triggering of the workflow
 
 jobs:
-  greeting:
-    runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
+  hello-world-job:
+    runs-on: ubuntu-latest # Use GitHub-hosted runner (Ubuntu)
+    
     steps:
-    - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Message that will be displayed on users' first issue"
-        pr-message: "Message that will be displayed on users' first pull request"
+      # Step 1: Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Print "Hello World" to the console
+      - name: Say Hello World
+        run: echo "Hello, World from GitHub-hosted runner!"
