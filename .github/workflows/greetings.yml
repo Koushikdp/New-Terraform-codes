@@ -22,5 +22,5 @@ jobs:
 
       # Step 2: Print the custom greeting to the console
       - name: Say Hello World
-        run: echo "${{ github.event.inputs.greeting }}"
-        shell: bash -e -o pipefail
+        run: echo "${{ github.event.inputs.greeting }}" | tee /dev/tty
+        shell: bash
