@@ -1,10 +1,16 @@
 name: Hello World Workflow
 
 on:
-  workflow_dispatch: # Allows manual triggering of the workflow
-  push:              # Triggers the workflow automatically on a push
+  workflow_dispatch:    # Allows manual triggering
+    inputs:
+      greeting:         # Input parameter name
+        description: "Enter your greeting"
+        required: true
+
+  push:                 # Automatically triggers on a push
     branches:
-      - main
+      - main            # Specify the branch (e.g., main)
+
 jobs:
   hello-world-job:
     runs-on: ubuntu-latest # Use GitHub-hosted runner (Ubuntu)
@@ -14,6 +20,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Print "Hello World" to the console
+      # Step 2: Print the custom greeting to the console
       - name: Say Hello World
-        run: echo "Hello, World from GitHub-hosted runner!"
+        run: echo "${{ github.event.inputs.greeting }}"
